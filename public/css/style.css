@@ -1,0 +1,471 @@
+
+/* Import Google Fonts */
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+/*
+Main CSS
+Created By CubeATX.com
+
+1 - Main Body Elements
+2 - Header 
+3 - Main Content
+  3.1 - Sub-Header Title
+4 - Footer
+5 - Special Elements
+6 - Boostrap Modifications
+7 - Media Queries
+	7.1 - Tablet
+	7.2 - Mobile
+*/
+
+
+/* ----- 1 Main Body Elements ----- */ 
+
+
+body {
+	font-family:"Lato", "Helvetica Neue", Arial, sans-serif;
+	background:#000;
+}
+
+#login-body {
+	background:#fff;
+}
+
+a {
+	color:#000;
+}
+
+a:hover {
+	color:#000;
+	opacity:.75;
+}
+
+#narrow {
+	font-weight:100;
+}
+
+#normal {
+	font-weight:300;
+}
+
+
+h1 {
+	font-size:60px;
+}
+
+h2 {
+	font-size:44px;
+}
+
+h3 {
+	font-size:36px;
+}
+
+h4 {
+	font-size:24px;
+}
+
+label span {
+	padding: 0px 10px;
+}
+
+.content {
+	margin-top:100px;
+	margin-left:250px;
+	width:65%;
+}
+
+.brand {
+	height:25px;
+	width:25px;
+	margin-right:10px;
+}
+
+.home-brand {
+	height:125px;
+	opacity:.5;
+}
+
+.margins5 { 
+	margin:5px;
+}
+.margins15 { 
+	margin:15px;
+}
+.margins25 { 
+	margin:25px;
+}
+
+.pad5 { 
+	padding:5px;
+}
+.pad15 { 
+	padding:15px;
+}
+.pad25 { 
+	padding:25px;
+}
+.pad50 { 
+	padding:50px;
+}
+.pad100 { 
+	padding:100px;
+}
+
+.clear {
+	clear:both;
+	padding:50px;
+}
+
+
+.error {
+	clear:both;
+	text-align:center;
+	padding:15px 0px;
+}
+
+/* ----- 2 Header ----- */ 
+nav.navbar.navbar-default.navbar-top {
+	background: #fff;
+	box-shadow: none;
+	border-radius: 0px;
+	padding: 25px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 10000;
+	border:1px solid #ccc;
+}
+.navbar-default {
+	border:0px;
+	text-transform: uppercase;
+	text-transform: 0px 2px 6px #000;
+	letter-spacing: 2px;
+	font-weight:300;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+	color: #555;
+	border-bottom: 2px solid #fff;
+	background-color:transparent;
+	color:#fff;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, a.navbar-brand {
+	color: #000;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+	font-size:30px;
+	text-transform: capitalize;
+	padding: 7px 0px;
+	font-weight: 100;
+}
+
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+	background-color: transparent;
+	color: #fff;
+}
+
+.navbar>.container .navbar-brand:focus, .navbar>.container .navbar-brand:hover {
+	color:#fff;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+	color:#000;
+}
+
+.dropdown-menu>li>a {
+	letter-spacing: normal;
+	text-transform: uppercase;
+	padding: 10px 30px;
+}
+
+
+.push-brand {
+	height: 75px;
+	width: 75px;
+	border-radius: 0px;
+	margin: 0 auto;
+}
+
+
+/* ----- 3 Main Content ----- */
+
+#learn {
+	padding:0px 50px 200px 50px;
+	background: #fff;
+}
+
+.jumbotron {
+	margin-top: 80px;
+	padding: 150px 100px 150px 100px;
+	color: #fff;
+	margin-bottom: 0px;
+	background:transparent;
+	z-index:1000 !important;
+}
+
+.theme-wrap {
+	background: url('https://unsplash.imgix.net/photo-1414005987108-a6d06de8769f?fit=crop&fm=jpg&h=800&q=75&w=1050');
+	background-position:0px;
+	background-size: cover;
+	height: 700px;
+	margin-top: -700px;
+}
+
+.page-wrap {
+	background: #006699;
+	background-position:0px;
+	background-size: cover;
+	height: 200px;
+}
+
+.main {
+	margin:0 auto;
+	background:#fff;
+}
+
+.page-main {
+	margin:0 auto;
+	background:#fff;
+}
+
+
+.page-header {
+	position: relative;
+	top: 100px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0px 2px 2px #000;
+	font-size: 60px;
+	border:0px;
+}
+
+.main .wrap, .page-main .wrap {
+	margin:0 auto;
+	width:80%;
+	padding: 50px 25px;
+}
+
+.page-main .wrap p{
+	font-size:20px;
+	line-height:30px;
+	font-weight:300;
+
+}
+
+.page-main .wrap li{
+	font-size:16px;
+}
+
+.page-main .col-md-3 h4 {
+	font-size:20px;
+	padding:50px 0px;
+}
+
+
+.jumbotron h1 {
+	text-shadow:0px 2px 6px #000;
+}
+
+.jumbotron h3 {
+	font-weight:300;
+	margin:0 auto;
+	padding:50px 0px;
+	width:60%;
+	font-size:30px;
+	line-height: 40px;
+	text-shadow:0px 2px 6px #000;
+}
+
+.tagline {
+	font-weight: 300;
+	margin: 0 auto;
+	padding: 75px;
+	width: 80%;
+	line-height: 36px;
+}
+
+.head {
+	font-weight: 300;
+	padding: 25px 15px;
+	letter-spacing: 2px;
+}
+
+.desc {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 300;
+}
+
+#lg-icon {
+	font-size: 75px;
+	color: #28844C;
+}
+
+
+/* ----- 4 Footer ----- */ 
+
+
+footer {
+	padding:50px 0px 0px 0px;
+	background:#000;
+}
+
+footer h4 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size:16px;
+	color:#fff;
+}
+
+footer ul {
+	list-style-type: none;
+	padding:0px;
+}
+
+footer a {
+	color:#999;
+	font-size:14px;
+}
+
+footer a:hover {
+	color:#fff;
+	text-decoration: none;
+}
+
+footer p{
+	color:#fff;
+	font-weight:100;
+}
+
+.copy {
+	text-align:center;
+	padding:50px;
+}
+
+/* ----- 5 Special Elements ----- */ 
+
+.login-logo img {
+	max-height:80px;
+	margin:25px 0px;
+}
+
+.ghost-btn, .ghost-btn:hover, .ghost-btn:focus {
+	background: none;
+	border: 2px solid #fff;
+	color:#fff;
+	border-radius: 0px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.cedar-btn {
+	border-radius:0px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #28844C;
+	border-color: #28844C;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+	opacity:.9;
+	color: #fff;
+	background-color: #28844C;
+	border-color: #28844C;
+}
+
+.home-sign-up {
+	padding:11px 40px;	
+	margin-right:10px;
+}
+
+.login-form {
+	color: #000;
+	font-weight: 300;
+	padding: 0px 25px 50px 25px;
+	background: #fff;
+	margin: 50px 0px;
+}
+
+.login-form h2 {
+	font-size:50px;
+	font-weight:300;
+	margin-bottom:25px;
+}
+
+.login-form h2 a:hover {
+	text-decoration:none;
+}
+
+.login-form .form-control {
+	font-size: 24px;
+	padding: 25px 10px;
+	font-weight: 300;
+	box-shadow: none;
+	color: #000;
+}
+
+/* ----- 6 Bootstrap Modifications ----- */ 
+
+
+/* ----- 7 Media Queries ----- */ 
+
+
+/* ----- 7.1 Media Queries - Tablet ----- */ 
+
+
+@media (min-width : 768px) and (max-width : 1024px) {
+
+
+
+}
+
+
+/* ----- 7.2 Media Queries - Mobile ----- */ 
+
+
+@media (min-width : 320px) and (max-width : 768px) {
+
+.jumbotron {
+	margin-top: 80px;
+	padding: 50px 0px;
+	color: #fff;
+	margin-bottom: 0px;
+	background: transparent;
+	z-index: 1000 !important;
+}
+
+.tagline {
+	font-weight: 300;
+	margin: 0 auto;
+	padding: 50px 0px;
+	width: 100%;
+	line-height: 36px;
+}
+
+.page-header {
+	position: relative;
+	top: 115px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0px 2px 2px #000;
+	font-size: 36px;
+	border: 0px;
+}
+
+}
+
+
+
+}
