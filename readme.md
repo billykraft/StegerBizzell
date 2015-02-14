@@ -1,6 +1,6 @@
 ## Custom Web Project
 
-Custom web application built on the Laravel PHP Framework.
+Custom web application built on the Laravel PHP Framework for Steger & Bizzell Engineering Inc.
 
 ## Additional Notes
 
@@ -12,4 +12,4 @@ Custom web application built on the Laravel PHP Framework.
 
 #### License
 
-Copyright CVBE LLC 2014.
+Copyright Cube ATX LLC 2014.
