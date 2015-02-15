@@ -6,8 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AccountController' => $baseDir . '/app/controllers/AccountController.php',
     'AddCashierColumns' => $baseDir . '/app/database/migrations/2014_10_09_043618_add_cashier_columns.php',
+    'AddUsersTable' => $baseDir . '/app/database/migrations/2015_02_15_201242_add_users_table.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',
     'Boris\\CLIOptionsHandler' => $vendorDir . '/d11wtq/boris/lib/Boris/CLIOptionsHandler.php',
@@ -427,6 +427,7 @@ return array(
     'Laravel\\Cashier\\BillableTrait' => $vendorDir . '/laravel/cashier/src/Laravel/Cashier/BillableTrait.php',
     'Laravel\\Cashier\\CashierServiceProvider' => $vendorDir . '/laravel/cashier/src/Laravel/Cashier/CashierServiceProvider.php',
     'Laravel\\Cashier\\CashierTableCommand' => $vendorDir . '/laravel/cashier/src/Laravel/Cashier/CashierTableCommand.php',
+    'Laravel\\Cashier\\Customer' => $vendorDir . '/laravel/cashier/src/Laravel/Cashier/Customer.php',
     'Laravel\\Cashier\\EloquentBillableRepository' => $vendorDir . '/laravel/cashier/src/Laravel/Cashier/EloquentBillableRepository.php',
     'Laravel\\Cashier\\Invoice' => $vendorDir . '/laravel/cashier/src/Laravel/Cashier/Invoice.php',
     'Laravel\\Cashier\\LineItem' => $vendorDir . '/laravel/cashier/src/Laravel/Cashier/LineItem.php',
@@ -973,10 +974,9 @@ return array(
     'Psr\\Log\\LoggerInterface' => $vendorDir . '/psr/log/Psr/Log/LoggerInterface.php',
     'Psr\\Log\\LoggerTrait' => $vendorDir . '/psr/log/Psr/Log/LoggerTrait.php',
     'Psr\\Log\\NullLogger' => $vendorDir . '/psr/log/Psr/Log/NullLogger.php',
-    'Service' => $baseDir . '/app/models/Service.php',
-    'ServicesController' => $baseDir . '/app/controllers/ServicesController.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'SessionsController' => $baseDir . '/app/controllers/SessionsController.php',
+    'SettingsController' => $baseDir . '/app/controllers/SettingsController.php',
     'Stack\\Builder' => $vendorDir . '/stack/builder/src/Stack/Builder.php',
     'Stack\\StackedHttpKernel' => $vendorDir . '/stack/builder/src/Stack/StackedHttpKernel.php',
     'Stripe' => $vendorDir . '/stripe/stripe-php/lib/Stripe/Stripe.php',

@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'name_of_database',
+			'database'  => 'StegerBizzell',
 			'username'  => 'root',
 			'password'  => 'root',
 			'charset'   => 'utf8',
