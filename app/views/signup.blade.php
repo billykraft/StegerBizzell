@@ -8,7 +8,7 @@
 </div>
 
 <div class="col-md-4">
-    <h2 class="text-center">Cube</h2>
+    <h2 class="text-center">Steger Bizzell</h2>
 {{ Form::open() }}
         <div class="form-group">
             {{ Form::label('first_name', 'First Name') }}
