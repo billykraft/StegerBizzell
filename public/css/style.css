@@ -133,7 +133,7 @@ nav.navbar.navbar-default.navbar-top {
 	position: fixed;
 	top: 0px;
 	width: 100%;
-	z-index: 10000;
+	z-index: 1000;
 	border:1px solid #ccc;
 }
 .navbar-default {
@@ -286,6 +286,25 @@ nav.navbar.navbar-default.navbar-top {
 	color:#000;
 }
 
+.logged-in-view {
+	width:100%;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	background:#2b2d35;
+	padding:15px;
+	z-index: 1000;
+}
+
+.logged-in-view li {
+	display:inline;
+}
+
+.logged-in-view li a, .logged-in-view li a:hover {
+	color:#fff;
+	text-decoration: none;
+}
+
 
 /* ----- 3 Main Content ----- */
 
@@ -305,9 +324,8 @@ nav.navbar.navbar-default.navbar-top {
 }
 
 .theme-wrap {
-	background: url('https://unsplash.imgix.net/photo-1414005987108-a6d06de8769f?fit=crop&fm=jpg&h=800&q=75&w=1050');
-	background-position:0px;
 	background-size: cover;
+	background-position: center;
 	height: 700px;
 	margin-top: -700px;
 }
@@ -444,6 +462,13 @@ footer p{
 }
 
 /* ----- 5 Special Elements ----- */ 
+
+.pic-gallery {
+	cursor: pointer; 
+	float: left; 
+	margin-left: 10px; 
+	height: 150px;
+}
 
 .login-logo img {
 	max-height:80px;

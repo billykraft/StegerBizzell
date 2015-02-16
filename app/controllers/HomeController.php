@@ -17,32 +17,74 @@ class HomeController extends BaseController {
 
 		public function showRoadsBridges()
 		{
-			$pageTitle = 'Roads and Bridges';
+			$pageTitle = vizualize::unique_text("roadsNbridges");
 			return View::make('pages.roads-and-bridges', compact('pageTitle'));
 		}
 
 		public function showUtilityDesign()
 		{
-			$pageTitle = 'Utility Design';
+			$pageTitle = vizualize::unique_text("utilityDesign");
 			return View::make('pages.utility-design', compact('pageTitle'));
 		}
 
 		public function showLandDevelopment()
 		{
-			$pageTitle = 'Land Development';
+			$pageTitle = vizualize::unique_text("landDev");
 			return View::make('pages.land-development', compact('pageTitle'));
 		}
 
 		public function showLandSurveying()
 		{
-			$pageTitle = 'Land Surveying';
+			$pageTitle = vizualize::unique_text("landSurv");
 			return View::make('pages.land-surveying', compact('pageTitle'));
 		}
 
 	public function showProjects()
 	{
 		$pageTitle = 'Projects';
-		return View::make('pages.projects', compact('pageTitle'));
+
+		$galleries = DB::table("galleries")->orderBy("created_at",'desc')->get();
+
+		return View::make('pages.projects', compact('pageTitle','galleries'));
+	}
+
+	public function deleteProject($id){
+		if( !Auth::check() ){ die(); }
+
+		$gals = DB::table("galleries")->orderBy('folder','asc')->get();
+
+		for($i=0;$i<sizeof($gals);$i++){
+			if( $gals[$i]->gallery_id == $id ){
+				$_POST['folder_num'] = "$i";
+				break;
+			}
+		}
+
+		if( strlen($gals[$i]->directory) > 0 ){
+			include "$_SERVER[DOCUMENT_ROOT]/stegerbizzell/vendor/vizual/uploaderDelete.php";
+		}
+
+		DB::table("galleries")->where("gallery_id",'=',$id)->delete();
+
+		return Redirect::to(url("/projects"));
+	}
+
+	public function showProject($id){
+
+		$gallery = DB::table("galleries")->where("gallery_id",'=',$id)->get()[0];
+		$folder = floatval($gallery->folder);
+		$path = variables::$pathToVizual . "/uploadedFiles/$gallery->directory/$folder/";
+		$pics = scandir($_SERVER['DOCUMENT_ROOT'] . $path);
+		$picNames = array();
+		for($i=0;$i<sizeof($pics);$i++){
+			if( strlen($pics[$i]) > 2 ){
+				$picNames[] = $pics[$i];
+			}
+		}
+
+		$pageTitle = $gallery->name;
+
+		return View::make('pages.one-project', compact('pageTitle', 'gallery', 'picNames','path'));
 	}
 
 	public function showContactUs()

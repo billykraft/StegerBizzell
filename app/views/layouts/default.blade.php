@@ -49,7 +49,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('/img/logo.png') }}" style="height:60px; margin-top:-10px;" alt="Steger Bizzell" /></a>
+          <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('/img/logo.png') }}" style="height:60px;margin-top:-10px;" alt="Steger Bizzell" /></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -57,16 +57,30 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Services <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="{{ url('/services') }}">Our Services</a></li>
-                <li><a href="{{ url('/services/roads-and-bridges') }}">Roads & Bridges</a></li>
-                <li><a href="{{ url('/services/utility-design') }}">Utility Design</a></li>
-                <li><a href="{{ url('/services/land-development') }}">Land Development</a></li>
-                <li><a href="{{ url('/services/land-surveying') }}">Land Surveying</a></li>
+                <li><a href="{{ url('/services/roads-and-bridges') }}">{{ vizualize::unique_text("roadsNbridges") }}</a></li>
+                <li><a href="{{ url('/services/utility-design') }}">{{ vizualize::unique_text("utilityDesign") }}</a></li>
+                <li><a href="{{ url('/services/land-development') }}">{{ vizualize::unique_text("landDev") }}</a></li>
+                <li><a href="{{ url('/services/land-surveying') }}">{{ vizualize::unique_text("landSurv") }}</a></li>
               </ul>
             </li>
             <li><a href="{{ url('/projects') }}">Projects</a></li>
             <li><a href="{{url('/contact-us')}}">Contact Us</a></li>
             @if (Auth::check())
-              <li><a href="{{url('/logout')}}">Logout <i class="fa fa-lock"></i></a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle account" data-toggle="dropdown">{{ Auth::user()->first_name }}<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="{{ url('account/dashboard'); }}"><i class="glyphicon glyphicon-cog"></i>Dashboard</a></li>
+                  <li class="divider"></li>
+                  <li class="last"><a href="{{ url('/logout'); }}"><i class="glyphicon glyphicon-off"></i>Logout</a></li>
+                </ul>
+              </li>
+              <div class="logged-in-view">
+                <ul>
+                  <li><a id="editableCancelButton" name="editableIcon" onclick="editableToggleEdit();" style="display:none;float:right" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</a></li>
+                  <li><a id="editableSaveButton" name="editableIcon" onclick="editableSubmitAll();" style="display:none;margin-right:15px;float:right" class="btn btn-primary"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Publish</a></li>
+                  <li><a id="editableEditButton" onclick="editableToggleEdit();" class="btn btn-info" style="margin-right:15px;float:right"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Page</a></li>
+                </ul>
+              </div>
             @else
               <li><a href="{{url('/login')}}">Login <i class="fa fa-lock"></i></a></li>
             @endif
@@ -94,10 +108,10 @@
   <div class="col-md-3">
       <h4>Services</h4>
         <ul>
-          <li><a href="{{ url('/services/roads-and-bridges') }}">Roads & Bridges</a></li>
-          <li><a href="{{ url('/services/utility-design') }}">Utility Design</a></li>
-          <li><a href="{{ url('/services/land-development') }}">Land Development</a></li>
-          <li><a href="{{ url('/services/land-surveying') }}">Land Surveying</a></li>
+          <li><a href="{{ url('/services/roads-and-bridges') }}">{{ vizualize::unique_text("roadsNbridges") }}</a></li>
+          <li><a href="{{ url('/services/utility-design') }}">{{ vizualize::unique_text("utilityDesign") }}</a></li>
+          <li><a href="{{ url('/services/land-development') }}">{{ vizualize::unique_text("landDev") }}</a></li>
+          <li><a href="{{ url('/services/land-surveying') }}">{{ vizualize::unique_text("landSurv") }}</a></li>
         </ul>
   </div>
 
@@ -107,9 +121,9 @@
 
   <div class="col-md-3">
       <h4>Contact</h4>
-      <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> &nbsp; 512.930.9412</p>
-      <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> &nbsp; 1978 S. Austin Avenue<br/>
-        <span style="margin-left:22px;">Georgetown, TX 78626</span>
+      <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> &nbsp; {{ vizualize::unique_text("phone") }}</p>
+      <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> &nbsp; {{ vizualize::unique_text("addr1") }}<br/>
+        <span style="margin-left:22px;">{{ vizualize::unique_text("addr2") }}</span>
       </p>
   </div>
 
@@ -156,3 +170,8 @@ $('a[href*=#]:not([href=#])').click(function() {
 </body>
 
 </html>
+
+
+@if(Auth::check())
+<script src="{{ url('../vendor/vizual/vizual.js'); }}"></script>
+@endif
