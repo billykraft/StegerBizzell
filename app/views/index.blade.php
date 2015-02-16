@@ -15,7 +15,7 @@
         </p>
       </div>
 <div class="theme-wrap vizual-unique-img" id="main_bckgrd" note="dark" vicon="down" style="background-image:{{ vizualize::unique_pic('main_bckgrd') }}">
-  <div style="width:100%;height:100%;background-color:black;opacity:0.2"></div>
+
 </div>
 
     <div class="main">
