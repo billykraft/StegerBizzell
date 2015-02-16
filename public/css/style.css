@@ -24,8 +24,8 @@ Created By CubeATX.com
 
 body {
 	font-family:"Lato", "Helvetica Neue", Arial, sans-serif;
-	background:#000;
-}
+/*	background:#000;
+*/}
 
 #login-body {
 	background:#fff;
@@ -192,8 +192,103 @@ nav.navbar.navbar-default.navbar-top {
 	margin: 0 auto;
 }
 
+.sidebar {
+	background: #2b2d35;
+	margin-top: 50px;
+	color:#999;
+	position:fixed;
+	height:100%;
+	padding:0px;
+	width:215px;
+}
+.sidebar ul {
+	padding-left:0px;
+}
+.glyphicon {
+	margin-right:5px;
+}
+.sidebar ul li i {
+	margin-right:10px;
+}
+.sidebar a {
+	color:#999;
+}
+.sidebar nav li {
+	padding:13px 15px;
+	list-style-type: none;
+	color: #ccc;
+	text-transform: capitalize;
+	font-weight: 300;
+	font-size:16px;
+	letter-spacing:0px;
+}
+
+.sidebar nav li:hover {
+	color:#f8f8f8;
+	background:#222;
+}
+
+.active-sidebar {
+	color:#f8f8f8;
+	background:#222;
+}
+
+.sidebar nav li.active-sidebar {
+	color:#f8f8f8;
+}
+
+.sidebar nav li ul {
+	background: #666;
+	margin-left: -20px;
+	margin-right: -15px;
+}
+
+
+.sidebar nav a {
+	color: #f8f8f8;
+	text-transform: capitalize;
+	font-weight: 300;
+	letter-spacing:0px;
+	text-decoration: none;
+}
+.sidebar nav li a:hover {
+	text-decoration: none;
+}
+
+.sidebar nav .well {
+	padding:0px;
+}
+
+.sidebar nav .well {
+	border-radius:0px;
+	border:0px;
+	margin-top:20px;
+	margin-bottom:-5px;
+}
+
+.sidebar nav .well li {
+	padding-left:25px;
+	font-size:14px;
+}
+
+.sidebar nav .well li:hover{
+	background:#f9f9f9;
+	color:#000;
+	border-right:1px solid #666;
+}
+
+.sidebar nav .well:hover, .sidebar nav .well:focus  {
+	opacity:1.0;
+}
+
+
+.sidebar nav .well li:hover {
+	color:#000;
+}
+
 
 /* ----- 3 Main Content ----- */
+
 
 #learn {
 	padding:0px 50px 200px 50px;

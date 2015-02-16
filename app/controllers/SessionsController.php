@@ -22,7 +22,14 @@ class SessionsController extends \BaseController {
 
 	public function create ()
 	{
-		//
+		if (Auth::check()) {
+			$userCount = DB::table('Users')->count();
+			$thisUser = Auth::user();
+			$pageTitle = "Dashboard";
+			return View::make('account.dashboard', compact('pageTitle', 'userCount', 'thisUser'));
+		} else {
+			return Redirect::guest('login')->with('flash_message','You must be logged in.');
+		}
 	}
 
 
@@ -34,7 +41,20 @@ class SessionsController extends \BaseController {
 
 	public function store () 
 	{
-		//
+		$remember = Input::get('checkbox');
+		$email = Input::get('email');
+		$password = Input::get('password');
+		if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
+			// if(Auth::user()->Users_Permissions_id === '1') {
+			// 	return Redirect::to('/account/admin');
+			// } 
+			// else {
+				return Redirect::to('/account/dashboard');
+			// }
+		} 
+		else {
+			return Redirect::back()->withInput()->with('flash_message','Invalid Login Credentials');
+		}
 	}
 
 	/**
@@ -86,7 +106,8 @@ class SessionsController extends \BaseController {
 	public function destroy() 
 	{
 
-		//
+		Auth::logout();
+		return Redirect::to('login')->with('flash_message','You have logged out');
 
 	} 
 

@@ -9,7 +9,13 @@ class SettingsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		if (Auth::check()) {
+			$pageTitle = 'Settings';
+			$thisUser = Auth::user();
+			return View::make('/account/settings', compact('thisUser', 'pageTitle'));
+		} else {
+			return View::make('login');
+		}
 	}
 
 

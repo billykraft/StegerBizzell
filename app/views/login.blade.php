@@ -7,7 +7,7 @@
 </div>
 <div class="col-md-4 login-form">
     <h2 class="text-center login-logo"><a href="{{url('/')}}"><img src="{{ url('/img/logo.png') }}" /></a></h2>
-{{ Form::open() }}
+{{ Form::open(['route' => 'account.sessions.store']) }}
 
     <div class="form-group">
         {{ Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'Email Address') )}}

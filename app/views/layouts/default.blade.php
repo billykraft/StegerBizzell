@@ -65,7 +65,11 @@
             </li>
             <li><a href="{{ url('/projects') }}">Projects</a></li>
             <li><a href="{{url('/contact-us')}}">Contact Us</a></li>
-            <li><a href="{{url('/login')}}">Login <i class="fa fa-lock"></i></a></li>
+            @if (Auth::check())
+              <li><a href="{{url('/logout')}}">Logout <i class="fa fa-lock"></i></a></li>
+            @else
+              <li><a href="{{url('/login')}}">Login <i class="fa fa-lock"></i></a></li>
+            @endif
           </ul>
         </div><!--/.nav-collapse -->
       </div>
