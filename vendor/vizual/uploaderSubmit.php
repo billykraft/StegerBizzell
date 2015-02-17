@@ -46,7 +46,7 @@ if ( !is_dir("$root/$pathToVizual/uploadedFiles/$page") ){
 }
 
 $time = (string)microtime(true);
-$time = (string)1234;
+
 $times = explode(".",$time);
 
 if( !isset($times[1]) ){
@@ -55,11 +55,12 @@ if( !isset($times[1]) ){
 else if( strlen($times[1]) > 2 ){
 	$time = $times[0] . "." . substr($times[1],0,2);
 }
+else if( strlen($times[1]) < 2 ){
+	$time = $times[0] . "." . "00";
+}
 else {
 	$time = $times[0] . "." . $times[1];
 }
-
-die("$time");
 
 mkdir( "$root/$pathToVizual/uploadedFiles/$page/$time" );
 
