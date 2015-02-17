@@ -82,7 +82,7 @@ class UsersController extends \BaseController {
 	{
 		$pageTitle = 'User Profile';
 		$thisUser = Auth::user();
-		$users = DB::table('users')->where('user_id', $id)->get();
+		$users = DB::table('Users')->where('user_id', $id)->get();
 		return View::make('user.show.user', compact('pageTitle', 'users', 'thisUser'));		
 	}
 
@@ -122,7 +122,7 @@ class UsersController extends \BaseController {
 		// $user->Users_Permissions_id = Input::get('Users_Permissions_id');
 		$user->save();
 
-		$users = DB::table('users')->where('user_id', $id)->get();
+		$users = DB::table('Users')->where('user_id', $id)->get();
 		$thisUser = Auth::user();
 
 		$pageTitle = 'User Profile';
