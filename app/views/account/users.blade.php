@@ -43,7 +43,7 @@
 </div>
 
 @if (Session::get('flash_message'))
-<div class="alert alert-success alert-dismissible">
+<div class="alert alert-success alert-dismissible" style="width:100%;height:7%;position:absolute;top:93%">
 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> {{ Session::get('flash_message') }}</div>
 @endif
