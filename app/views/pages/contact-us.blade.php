@@ -8,17 +8,27 @@
 
 	<div class="col-md-6">
 
-	<p>1978 S. Austin Avenue<br/>
-	Georgetown, TX 78626</p>
+	<p><asdf id="addr1" class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("addr1") }}</asdf><br>
+	<asdf id="addr2" class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("addr2") }}</asdf></p>
 
-	<p>phone: 512.930.9412<br/>
-	fax: 512.930.9416</p>
+	<!--p>phone: 512.930.9412<br>
+	fax: 512.930.9416</p-->
+	<p>phone: <asdf id="phone" class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("phone") }}</asdf><br>
+	fax: <asdf id="fax" class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("fax") }}</asdf></p>
 
-	<h3>Guiding Principles</h3>
-		<p>We will be honest and forthright in all endeavors.</p>
-		<p>We will create straightforward, economical solutions to problems.</p>
-		<p>We will use the latest proven technologies.</p>
-		<p>We will keep clients informed during all phases of projects.</p>
+		<!--h3>Guiding Principles</h3-->
+		<!--div>
+			<p>We will be honest and forthright in all endeavors.</p>
+			<p>We will create straightforward, economical solutions to problems.</p>
+			<p>We will use the latest proven technologies.</p>
+			<p>We will keep clients informed during all phases of projects.</p>
+		</div-->
+
+		<h3 id='prins' class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("prins") }}</h3>
+		<div id="prins_content" class='vizual-unique-txt' note='dark'>
+			{{ vizualize::unique_text("prins_content") }}
+		</div>
+
 	</div>
 
 	<div class="col-md-6">

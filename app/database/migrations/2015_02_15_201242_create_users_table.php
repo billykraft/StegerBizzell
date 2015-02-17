@@ -12,7 +12,7 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('users', function(Blueprint $table)
+		Schema::create('Users', function(Blueprint $table)
 		{
 			$table->engine = 'InnoDB';
 			$table->increments('user_id');
@@ -32,7 +32,7 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::table('Users', function(Blueprint $table)
 		{
 			//
 		});

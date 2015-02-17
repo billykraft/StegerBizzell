@@ -51,7 +51,15 @@ class UsersController extends \BaseController {
 	public function store()
 	{
 		//Set up Validation through the Model
-		$validation = Validator::make(Input::all(), User::$rules);
+		$validation = Validator::make(Input::all(), array(
+
+			"first_name" => "required|alpha",
+			"last_name" => "required|alpha",
+			"email" => 'required|email|unique:Users',
+			"password" => "required|min:8",
+
+		));
+
 		if ( $validation->fails())
 		{
 			return Redirect::back()->withInput()->withErrors($validation->messages());
@@ -83,7 +91,7 @@ class UsersController extends \BaseController {
 		$pageTitle = 'User Profile';
 		$thisUser = Auth::user();
 		$users = DB::table('users')->where('user_id', $id)->get();
-		return View::make('account.show.user', compact('pageTitle', 'users', 'thisUser'));		
+		return View::make('account.show.user', compact('pageTitle', 'users', 'thisUser'));
 	}
 
 
@@ -108,21 +116,52 @@ class UsersController extends \BaseController {
 	public function editUserStore($id)
 	{
 
-		// $validation = Validator::make(Input::all(), User::$rules);
-		// if ( $validation->fails())
-		// {
-		// 	return Redirect::back()->withInput()->withErrors($validation->messages());
-		// }
+		 $validation = Validator::make(Input::all(), array(
+
+		 	"first_name" => "required|alpha",
+		 	"last_name" => "required|alpha",
+
+		 ));
+
+		 global $ID; $ID = $id;
+
+		 $validation->sometimes("email", "required|unique:Users", function($input){
+		 	global $ID;
+		 	if( Input::get("email") == DB::table("Users")->where("user_id",'=',$ID)->get()[0]->email ){
+		 		return false;
+		 	}
+		 	return true;
+
+		 });
+
+		 $validation->sometimes("password","min:8",function($input){
+		 	if( strlen(Input::get("password")) > 0 ){ return true; }
+		 	return false;
+		 });
+
+		 $validation->sometimes("password2","required|same:password",function($input){
+		 	if( strlen(Input::get("password")) > 0 ){ return true; }
+		 	return false;
+		 });
+		 
+		 if ( $validation->fails())
+		 {
+		 	return Redirect::back()->withInput()->withErrors($validation->messages());
+		 }
+
 		$user = User::find($id);
 
 		$user->first_name = Input::get('first_name');
 		$user->last_name = Input::get('last_name');
 		$user->email = Input::get('email');
-		$user->password = Hash::make(Input::get('password'));
+
+		if( strlen(Input::get("password")) > 0 ){
+			$user->password = Hash::make(Input::get('password'));
+		}
 		// $user->Users_Permissions_id = Input::get('Users_Permissions_id');
 		$user->save();
 
-		$users = DB::table('users')->where('user_id', $id)->get();
+		$users = DB::table('Users')->where('user_id', $id)->get();
 		$thisUser = Auth::user();
 
 		$pageTitle = 'User Profile';

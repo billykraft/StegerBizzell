@@ -6,21 +6,31 @@
 
 	<div class="wrap">
 
-		<p>Steger Bizzell has designed and overseen the construction of numerous utility, water, and wastewater projects in Central Texas. The following is a representative list of projects:</p>
+		@if(Auth::check())
+		<script>vizualDrawPlus();</script>
+		@endif
 
-			<li class="well">Aqua Water Supply Corporation Capital Projects</li>
-			<li class="well">Chisholm Trail Water Supply original system funding and design</li>
-			<li class="well">City of Cedar Park original wastewater system</li>
-			<li class="well">City of Georgetown water and wastewater system improvements</li>
-			<li class="well">City of Leander original wastewater system</li>
-			<li class="well">Durham Park Water Supply Corporation — pumping station modifications</li>
-			<li class="well">Kempner Water Supply Corporation original system funding and design</li>
-			<li class="well">Kempner Water Supply Corporation — design of 7MGD treatment plant</li>
-			<li class="well">Liberty Hill Water Supply Corporation — pumping stations with chlorination facilities</li>
-			<li class="well">Williamson County Inner Loop around City of Georgetown</li>
-			<li class="well">Williamson County — numerous road and bridge designs</li>
-			<li class="well">Williamson County Parmer Lane Extension</li>
+		<p id="projs_title" class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("projs_title") }}</p>
 
+			@foreach ($galleries as $gallery)
+			@if(Auth::check())
+			<a style="color:red" class="vizual-show" href='{{ url("projects/delete/$gallery->gallery_id") }}'>delete</a>
+			@endif
+			<li class="well" <?php if(strlen($gallery->directory) > 0 ){ echo "style='cursor:pointer' onclick='window.location=\"" . url("/projects/$gallery->gallery_id") . "\"'"; } ?> >
+				{{ $gallery->name }}
+				<div style="float:right"><font color="#8585AD">
+					Created {{ variables::date_format($gallery->created_at) }}
+				</font></div>
+			</li>
+			@endforeach
+
+			@if(sizeof($galleries)==0)
+			<p class="well">No project galleries have been uploaded yet</p>
+			@endif
+
+		<asdf id="old_projs" class="vizual-unique-txt" note="dark">
+			{{ vizualize::unique_text("old_projs") }}
+		</asdf>
 	</div>
 </div> <!-- /main -->
 

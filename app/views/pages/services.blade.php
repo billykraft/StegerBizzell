@@ -5,24 +5,40 @@
 <div class="page-main">
 
 	<div class="wrap">
-		<p>We are proud of our ability to coordinate the requirements and desires of multiple entities to develop professional regional plans and to implement those plans.</p>
-		<p>Our experience in working with local, state and federal agencies allows us to efficiently procure permits, construction plan approvals, and funding with favorable terms.</p>
-
+	<asdf id="service_desc" class="vizual-unique-txt" note="dark">
+		{{ vizualize::unique_text("service_desc") }}
+	</asdf>
 
 <div class="col-md-3">
-	<h4><a href="{{ url('/services/roads-and-bridges') }}">Roads & Bridges &raquo;</a><h4>
+	<h4><a href="{{ url('/services/roads-and-bridges') }}">
+		<asdf id="roadsNbridges" class="vizual-unique-txt vizual-noclick" note="dark">
+			{{ vizualize::unique_text("roadsNbridges") }}
+		</asdf> &raquo;
+	</a><h4>
 </div>
 
 <div class="col-md-3">
-	<h4><a href="{{ url('/services/utility-design') }}">Utility Design &raquo;</a><h4>
+	<h4><a href="{{ url('/services/utility-design') }}">
+		<asdf id="utilityDesign" class="vizual-unique-txt vizual-noclick" note="dark">
+			{{ vizualize::unique_text("utilityDesign") }}
+		</asdf> &raquo;
+	</a><h4>
 </div>
 
 <div class="col-md-3">
-	<h4><a href="{{ url('/services/land-development') }}">Land Development &raquo;</a><h4>
+	<h4><a href="{{ url('/services/land-development') }}">
+		<asdf id="landDev" class="vizual-unique-txt vizual-noclick" note="dark">
+			{{ vizualize::unique_text("landDev") }}
+		</asdf> &raquo;
+	</a><h4>
 </div>
 
 <div class="col-md-3">
-	<h4><a href="{{ url('/services/land-surveying') }}">Land Surveying &raquo;</a><h4>
+	<h4><a href="{{ url('/services/land-surveying') }}">
+		<asdf id="landSurv" class="vizual-unique-txt vizual-noclick" note="dark">
+			{{ vizualize::unique_text("landSurv") }}
+		</asdf> &raquo;
+	</a><h4>
 </div>
 
 

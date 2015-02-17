@@ -70,4 +70,11 @@ require $framework.'/Illuminate/Foundation/start.php';
 |
 */
 
+ClassLoader::addDirectories(array(
+
+	base_path() . "/vendor/vizual",
+	base_path() . "/vendor/",
+
+));
+
 return $app;

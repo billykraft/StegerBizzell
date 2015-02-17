@@ -19,6 +19,9 @@ Route::get('/services','HomeController@showServices');
 Route::get('/projects','HomeController@showProjects');
 Route::get('/contact-us','HomeController@showContactUs');
 
+Route::get("/projects/{id}", "HomeController@showProject");
+Route::get("/projects/delete/{id}", "HomeController@deleteProject");
+
 
 Route::group(['before' => 'auth'], function()
 {
@@ -47,3 +50,7 @@ Route::get('login', 'UsersController@index')->before('guest');
 Route::get('logout', 'SessionsController@destroy');
 
 /* STRIPE & BILLING CONTROLLER */
+
+/* VIZUAL */
+Route::post('vizual','VizualController@submit');
+Route::post('/vizual/uploaderSubmit', 'VizualController@upload');
