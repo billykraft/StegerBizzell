@@ -39,8 +39,8 @@
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle account" data-toggle="dropdown">Hello {{$thisUser->first_name . ' ' . $thisUser->last_name}} <span class="caret"></span></a>
 		          <ul class="dropdown-menu" role="menu">
-		            <li><a href="{{ url('account/settings'); }}"><i class="glyphicon glyphicon-cog"></i>Settings</a></li>
-		            <li class="divider"></li>
+		            <!--li><a href="{{ url('account/settings'); }}"><i class="glyphicon glyphicon-cog"></i>Settings</a></li>
+		            <li class="divider"></li-->
                 <li><a href="{{ url('/'); }}"><i class="glyphicon glyphicon-pencil"></i>Front end</a></li>
                 <li class="divider"></li>
 		            <li class="last"><a href="{{ url('/logout'); }}"><i class="glyphicon glyphicon-off"></i>Logout</a></li>
@@ -58,7 +58,7 @@
           <a href="{{ url('/account/dashboard'); }}"><li style="margin-top:5px;"><i class="glyphicon glyphicon-home"></i>Dashboard</a></li>
           <a href="{{ url('/account/users'); }}"><li><i class="glyphicon glyphicon-user"></i>Users</li></a>
 <!--           <a href="{{ url('/account/admin/analytics'); }}"><li><i class="glyphicon glyphicon-stats"></i>Analytics</li></a> -->
-          <a href="{{ url('/account/settings'); }}"><li><i class="glyphicon glyphicon-cog"></i>Settings</li></a>
+          <!--a href="{{ url('/account/settings'); }}"><li><i class="glyphicon glyphicon-cog"></i>Settings</li></a-->
     </ul>
 </nav>
 </div>
