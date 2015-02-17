@@ -16,11 +16,11 @@
         {{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password') )}}
     </div>
 
-    <div class="checkbox">
+    <!--div class="checkbox">
         <label>
             <input type="checkbox"> Remember me
         </label>
-    </div>
+    </div-->
     <div class="submit">
         {{Form::submit('Login', ['class' => 'btn btn-lg btn-primary cedar-btn', 'style' => 'width:100%; padding:20px;'])}}
 
