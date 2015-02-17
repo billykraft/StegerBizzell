@@ -61,7 +61,7 @@ class HomeController extends BaseController {
 		}
 
 		if( strlen($gals[$i]->directory) > 0 ){
-			include "$_SERVER[DOCUMENT_ROOT]/stegerbizzell/vendor/vizual/uploaderDelete.php";
+			include "$_SERVER[DOCUMENT_ROOT]" . variables::$pathToVizual . "/uploaderDelete.php";
 		}
 
 		DB::table("galleries")->where("gallery_id",'=',$id)->delete();

@@ -4,7 +4,7 @@ class VizualController extends \BaseController {
 
 	public function submit(){
 
-        include "$_SERVER[DOCUMENT_ROOT]/stegerbizzell/vendor/vizual/vizual.php";
+        include "$_SERVER[DOCUMENT_ROOT]". variables::$pathToVizual ."/vizual.php";
 
         $goto = $_SERVER['HTTP_REFERER'];
 
@@ -16,7 +16,7 @@ class VizualController extends \BaseController {
 
 	public function upload(){
 
-		include "$_SERVER[DOCUMENT_ROOT]/stegerbizzell/vendor/vizual/uploaderSubmit.php";
+		include "$_SERVER[DOCUMENT_ROOT]". variables::$pathToVizual ."/uploaderSubmit.php";
 
 		if( $inserted == 1 ){
 
