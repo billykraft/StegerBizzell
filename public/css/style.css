@@ -391,6 +391,13 @@ nav.navbar.navbar-default.navbar-top {
 	letter-spacing: 2px;
 }
 
+.account-head {
+	background: #fff;
+	border: 0px;
+	box-shadow: none;
+	float: left;
+}
+
 .desc {
 	font-size: 16px;
 	line-height: 24px;

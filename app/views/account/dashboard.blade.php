@@ -6,9 +6,9 @@
 <div class="content col-md-9">
     <section>
 
-<!-- 		<div class="well account-head">
-		<h3 class="text-center">{{ $pageTitle }}</h3>
-		</div> -->
+		<div class="well account-head">
+			<h3 class="text-center">{{ $pageTitle }}</h3>
+		</div>
 
 
 		<br class="clear" />
