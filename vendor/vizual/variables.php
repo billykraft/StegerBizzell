@@ -2,15 +2,17 @@
 
 class variables {
 
-	public static $pathToVizual = "/stegerbizzell/vendor/vizual";
+	public static $pathToVizual = "";
+
+	public static $pathToVizuals = "/../vendor/vizual";
 
 	public static function vars(){
 		return array(
 
 			'host' => 'localhost',
 			'username' => "root",
-			'password' => "root",
-			'database' => "stegerbizzell",
+			'password' => 's$g43^$D-',
+			'database' => "StegerBizzell",
 
 		);
 	}

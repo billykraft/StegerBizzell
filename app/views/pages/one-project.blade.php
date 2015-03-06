@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="col-md-9 page-content">
+<div class="page-content">
 
 <script>var picURLs = new Array();</script>
 
@@ -12,9 +12,22 @@
 	<hr>
 </div>
 
+@if(Auth::check())
+{{ Form::open(array('url' => url("morePhotos/$gallery->gallery_id"), 'files' => true)) }}
+<input class="margins15 dash-btn" onchange="vizualUploadChange();" type="file" name="file[]" accept="image/*" multiple>
+<button type="submit" style="display: block; width: 200px;" type="button" class="btn btn-success btn-md margins15 dash-btn"><span class="glyphicon glyphicon-plus"></span>Add Pictures</button>
+<br/>
+{{ Form::close() }}
+@endif
+
 @foreach ( $picNames as $pic )
 
-<img name="pics" onclick="zoom(this);" class="thumbnail pic-gallery" src="{{ $path . $pic }}"/>
+<div class="pic-gallery">
+<img name="pics" onclick="zoom(this);" style="height:150px" class="thumbnail gallery-pos-pic" src="{{ $path . $pic }}"/>
+@if(Auth::check())
+<span class="glyphicon glyphicon-trash gallery-pos-icon" aria-hidden="true" onclick='pic_delete("{{ $path.$pic }}" );'></span>
+@endif
+</div>
 
 <script>picURLs.push( "{{ $path . $pic }}" );</script>
 
@@ -135,6 +148,25 @@ document.onkeydown = function(e) {
     }
 
 }
+
+@if(Auth::check())
+
+function pic_delete(pic){
+	if( confirm("Are you sure you want to remove this picture?") ){
+		$.ajax({
+	        type:  'post',
+	        cache:  false ,
+	        url:  '{{ url("/removePhoto") }}',
+	        data:  {photo:pic},
+	        success: function(resp) {
+	        	alert(resp);
+	        	window.location = window.location;
+	        }  
+	    });
+	}
+}
+
+@endif
 
 function keyz(key) {
     if( key === 37 || key === 38 ) {

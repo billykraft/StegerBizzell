@@ -173,5 +173,5 @@ $('a[href*=#]:not([href=#])').click(function() {
 
 
 @if(Auth::check())
-<script src="{{ url('../vendor/vizual/vizual.js'); }}"></script>
+<script src="{{ url('js/vizual.js'); }}"></script>
 @endif

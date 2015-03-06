@@ -57,11 +57,11 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'StegerBizzell',
 			'username'  => 'root',
-			'password'  => 'root',
+			'password'  => 's$g43^$D-',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
-			'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
+			'unix_socket' => '/run/mysqld/mysqld.sock',
 		),
 
 		'pgsql' => array(

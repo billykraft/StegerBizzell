@@ -14,7 +14,7 @@
 
 			@foreach ($galleries as $gallery)
 			@if(Auth::check())
-			<a style="color:red" class="vizual-show" href='{{ url("projects/delete/$gallery->gallery_id") }}'>delete</a>
+			<a style="color:red;cursor:pointer" class="vizual-show" onclick="delete_('{{ url("projects/delete/$gallery->gallery_id") }}');">delete</a>
 			@endif
 			<li class="well" <?php if(strlen($gallery->directory) > 0 ){ echo "style='cursor:pointer' onclick='window.location=\"" . url("/projects/$gallery->gallery_id") . "\"'"; } ?> >
 				{{ $gallery->name }}
@@ -33,5 +33,13 @@
 		</asdf>
 	</div>
 </div> <!-- /main -->
+
+<script>
+function delete_(url){
+	if( confirm("Are you sure you want to delete this project?") ){
+		window.location = url;
+	}
+}
+</script>
 
 @stop

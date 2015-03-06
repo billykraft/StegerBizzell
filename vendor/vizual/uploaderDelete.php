@@ -13,11 +13,18 @@ while($i<strlen($page)){
 
 $page = substr($page,$i,strlen($page)-$i);
 
+$first = -1;
+
 for($i=0;$i<strlen($page);$i++){
 	if($page[$i]=='/'){
+		if( $first == -1 ){
+			$first = $i;
+		}
 		$page[$i]='@';
 	}
 }
+
+$page = substr($page,$first);
 
 $root = $_SERVER['DOCUMENT_ROOT'];
 

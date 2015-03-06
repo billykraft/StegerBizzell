@@ -53,15 +53,18 @@ class HomeController extends BaseController {
 
 		$gals = DB::table("galleries")->orderBy('folder','asc')->get();
 
+		$count = 0;
+
 		for($i=0;$i<sizeof($gals);$i++){
 			if( $gals[$i]->gallery_id == $id ){
-				$_POST['folder_num'] = "$i";
+				$_POST['folder_num'] = "$count";
 				break;
 			}
+			if( strlen($gals[$i]->directory) > 0 ){ $count += 1; }
 		}
 
 		if( strlen($gals[$i]->directory) > 0 ){
-			include "$_SERVER[DOCUMENT_ROOT]" . variables::$pathToVizual . "/uploaderDelete.php";
+			include "$_SERVER[DOCUMENT_ROOT]" . variables::$pathToVizuals . "/uploaderDelete.php";
 		}
 
 		DB::table("galleries")->where("gallery_id",'=',$id)->delete();
@@ -72,7 +75,7 @@ class HomeController extends BaseController {
 	public function showProject($id){
 
 		$gallery = DB::table("galleries")->where("gallery_id",'=',$id)->get()[0];
-		$folder = floatval($gallery->folder);
+		$folder = $gallery->folder;
 		$path = variables::$pathToVizual . "/uploadedFiles/$gallery->directory/$folder/";
 		$pics = scandir($_SERVER['DOCUMENT_ROOT'] . $path);
 		$picNames = array();

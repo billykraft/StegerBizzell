@@ -41,7 +41,7 @@ Route::group(['before' => 'auth'], function()
 
 });
 
-
+Route::post("/removePhoto", "VizualController@removePic");
 
 /* SESSIONS */
 Route::resource('/account/sessions','SessionsController');
@@ -54,3 +54,4 @@ Route::get('logout', 'SessionsController@destroy');
 /* VIZUAL */
 Route::post('vizual','VizualController@submit');
 Route::post('/vizual/uploaderSubmit', 'VizualController@upload');
+Route::post("/morePhotos/{id}","VizualController@addMore");

@@ -8,8 +8,8 @@
 
 	<div class="col-md-6">
 
-	<p><asdf id="addr1" class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("addr1") }}</asdf><br>
-	<asdf id="addr2" class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("addr2") }}</asdf></p>
+	<p><asdf id="addr1">1978 S. Austin Avenue</asdf><br>
+	<asdf id="addr2">Georgetown, TX 78626</asdf></p>
 
 	<!--p>phone: 512.930.9412<br>
 	fax: 512.930.9416</p-->

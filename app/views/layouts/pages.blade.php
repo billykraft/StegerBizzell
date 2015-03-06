@@ -26,7 +26,7 @@
 <script src="{{ url('/js/custom.js'); }}"></script>
 
 @if(Auth::check())
-<script src="{{ url('../vendor/vizual/uploader.js'); }}"></script>
+<script src="{{ url('js/uploader.js'); }}"></script>
 @endif
 
 <!--[if lt IE 9]>
@@ -179,5 +179,5 @@ $('a[href*=#]:not([href=#])').click(function() {
 </html>
 
 @if(Auth::check())
-<script src="{{ url('../vendor/vizual/vizual.js'); }}"></script>
+<script src="{{ url('js/vizual.js'); }}"></script>
 @endif

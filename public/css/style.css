@@ -330,7 +330,7 @@ nav.navbar.navbar-default.navbar-top {
 }
 
 .page-wrap {
-	background: #006699;
+	background: #004A00;
 	background-position:0px;
 	background-size: cover;
 	height: 200px;
@@ -465,8 +465,25 @@ footer p{
 .pic-gallery {
 	cursor: pointer; 
 	float: left; 
-	margin-left: 10px; 
-	height: 150px;
+	margin-left: 10px;
+}
+
+.gallery-pos-pic {
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+.gallery-pos-icon {
+	position: relative;
+	top: -160px;
+	left: 10px;
+	color: red;
+}
+
+.gallery-pos-icon:hover {
+	background-color:white;
+	opacity: 0.5;
 }
 
 .login-logo img {
