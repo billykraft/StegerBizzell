@@ -26,7 +26,7 @@ class UsersController extends \BaseController {
 	{
 		$pageTitle = 'Create New User';
 		$thisUser = Auth::user();
-		return View::make('user.add-new.user', compact('pageTitle', 'id', 'thisUser'));		
+		return View::make('account.add-new.user', compact('pageTitle', 'id', 'thisUser'));		
 	}
 
 	/**
@@ -90,8 +90,8 @@ class UsersController extends \BaseController {
 	{
 		$pageTitle = 'User Profile';
 		$thisUser = Auth::user();
-		$users = DB::table('Users')->where('user_id', $id)->get();
-		return View::make('user.show.user', compact('pageTitle', 'users', 'thisUser'));		
+		$users = DB::table('users')->where('user_id', $id)->get();
+		return View::make('account.show.user', compact('pageTitle', 'users', 'thisUser'));
 	}
 
 
@@ -110,7 +110,7 @@ class UsersController extends \BaseController {
 		$email = $user->email;
 		// $type = $user->Users_Permissions_id;
 		$pageTitle = 'Edit User';
-		return View::make('user.edit.user', compact('pageTitle', 'id', 'firstName', 'lastName', 'email', 'thisUser'));	
+		return View::make('account.edit.user', compact('pageTitle', 'id', 'firstName', 'lastName', 'email', 'thisUser'));	
 	}
 
 	public function editUserStore($id)
@@ -165,7 +165,7 @@ class UsersController extends \BaseController {
 		$thisUser = Auth::user();
 
 		$pageTitle = 'User Profile';
-		return View::make('user.show.user', compact('pageTitle', 'users', 'user', 'thisUser'));
+		return View::make('account.show.user', compact('pageTitle', 'users', 'user', 'thisUser'));
 	}
 
 	public function deleteUser($id) {
