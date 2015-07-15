@@ -3,7 +3,6 @@
 @section('content')
 
 
-
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron text-center">
         <!--h1>Steger & Bizzell Engineering</h1-->

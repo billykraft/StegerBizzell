@@ -6,11 +6,7 @@ class VizualController extends \BaseController {
 
         include "$_SERVER[DOCUMENT_ROOT]". variables::$pathToVizuals ."/vizual.php";
 
-        $goto = $_SERVER['HTTP_REFERER'];
-
-		header("Location: $goto");
-
-		return Redirect::to(url(""));
+        return Redirect::back();
 
 	}
 
