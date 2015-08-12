@@ -37,8 +37,7 @@ Route::group(['before' => 'auth'], function()
 		Route::post('/account/users/{id}/edit','UsersController@editUserStore');
 
 	/* ACCOUNT ROUTES */
-		Route::resource('/account/settings','SettingsController');
-
+		Route::get('/account/settings','SettingsController@edit');
 });
 
 Route::post("/removePhoto", "VizualController@removePic");

@@ -49,7 +49,7 @@ class SettingsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		
 	}
 
 
@@ -59,9 +59,13 @@ class SettingsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit()
 	{
-		//
+		$pageTitle = "Settings";
+
+		$thisUser = Auth::user();
+
+		return View::make("account.edit.settings", compact('pageTitle', 'thisUser'));
 	}
 
 

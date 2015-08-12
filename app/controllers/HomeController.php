@@ -2,6 +2,10 @@
 
 class HomeController extends BaseController {
 
+	public function files(){
+		
+	}
+
 	public function showHome()
 	{
 		$pageTitle = 'Home';

@@ -90,7 +90,7 @@ class UsersController extends \BaseController {
 	{
 		$pageTitle = 'User Profile';
 		$thisUser = Auth::user();
-		$users = DB::table('users')->where('user_id', $id)->get();
+		$users = DB::table('Users')->where('user_id', $id)->get();
 		return View::make('account.show.user', compact('pageTitle', 'users', 'thisUser'));
 	}
 
