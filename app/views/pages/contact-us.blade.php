@@ -13,8 +13,7 @@
 
 	<!--p>phone: 512.930.9412<br>
 	fax: 512.930.9416</p-->
-	<p>phone: <asdf id="phone" class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("phone") }}</asdf><br>
-	fax: <asdf id="fax" class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("fax") }}</asdf></p>
+	<p>phone: <asdf id="phone" class="vizual-unique-txt" note="dark">{{ vizualize::unique_text("phone") }}</asdf></p>
 
 		<!--h3>Guiding Principles</h3-->
 		<!--div>

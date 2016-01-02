@@ -14,7 +14,7 @@
         </p>
       </div>
 <div class="theme-wrap vizual-unique-img" id="main_bckgrd" style="background-image:{{ vizualize::unique_pic('main_bckgrd') }};">
-  <div style="margin-top:-580px;width:100%;height:700px;background-color:rgba(0,0,0,0.5);"></div>
+  <div style="margin-top:-580px;width:100%;height:700px;background-color:rgba(0,0,0,0.4);"></div>
 </div>
 
     <div class="main">
